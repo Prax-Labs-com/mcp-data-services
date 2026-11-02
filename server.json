@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.orabrain/prax-data-services",
+  "title": "Prax Data Services",
+  "description": "Screen EVM wallets, contracts and transactions against sanctions, exploit, phishing and scam intel.",
+  "version": "1.0.1",
+  "websiteUrl": "https://mcp.orabrain.com/?src=registry",
+  "repository": { "url": "https://github.com/prax-labs/mcp-data-services", "source": "github" },
+  "remotes": [
+    { "type": "streamable-http", "url": "https://mcp.orabrain.com/mcp" }
+  ]
+}
