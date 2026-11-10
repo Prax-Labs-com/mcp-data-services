@@ -19,7 +19,7 @@ threat-intelligence alert feed. Verdicts come with reasons and references — no
 | **Claude Code** | `claude mcp add --transport http prax https://mcp.orabrain.com/mcp` then `/mcp` → prax → Authenticate |
 | **Cursor** | [Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=prax&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3Aub3JhYnJhaW4uY29tL21jcCJ9) or add to `.cursor/mcp.json`: `{"mcpServers":{"prax":{"url":"https://mcp.orabrain.com/mcp"}}}` |
 | **VS Code** (Copilot agent mode) | `.vscode/mcp.json`: `{"servers":{"prax":{"type":"http","url":"https://mcp.orabrain.com/mcp"}}}` |
-| **ChatGPT** | Settings → Connectors → Create (Developer mode) → MCP server URL above, authentication OAuth |
+| **ChatGPT** (Plus/Pro/Business) | Settings → Apps & Connectors → Advanced → Developer mode, then Create → MCP server URL above, authentication OAuth |
 | **Anything else** | Any MCP client with Streamable HTTP + OAuth (dynamic client registration supported), or send `Authorization: Bearer prax_live_…` with a key from the [portal](https://mcp.orabrain.com/portal/) |
 
 The first call sends you to `mcp.orabrain.com/portal` to sign in (or create a free account) and approve the app.
