@@ -3,10 +3,11 @@
 ![Prax Data Services](https://mcp.orabrain.com/portal/badge.svg)
 [![MCP Registry](https://img.shields.io/badge/MCP%20Registry-com.orabrain%2Fprax--data--services-0f766e)](https://registry.modelcontextprotocol.io/v0.1/servers?search=com.orabrain)
 
-Security and compliance intelligence for financial services, as tools your AI agents can call:
-wallet / smart-contract risk screening (KYT / AML), pre-signature transfer screening, sanctions
-screening of people, companies, vessels and crypto addresses, transaction analysis and a
-threat-intelligence alert feed. Verdicts come with reasons and references — no black-box score.
+Security and compliance intelligence for financial services, as tools your AI agents can call, on
+both rails: counterparty-bank and wire screening (BIC / IBAN / ABA / LEI, jurisdiction lists, FinCEN 311,
+enforcement history), sanctions screening of people, companies, vessels and crypto addresses, regulatory
+enforcement history, licence and MSB registration checks, wallet / smart-contract risk screening (KYT / AML),
+pre-signature transfer screening, transaction analysis and a threat-intelligence alert feed. Verdicts come with reasons and references — no black-box score.
 
 **Endpoint:** `https://mcp.orabrain.com/mcp` (Streamable HTTP, OAuth 2.1 — no key to paste)
 **Docs & plans:** https://mcp.orabrain.com · **Free plan:** 10 credits/day, no card.
@@ -30,19 +31,23 @@ Connected apps are listed under **Account → Connected apps**, each with its ow
 | Tool | What it answers | Plan |
 |---|---|---|
 | `screen_wallet` | Is this EVM address safe? Sanctions, exploits, phishing, scams, drainers, mixers, malicious contracts, first-hop exposure. Risk band, labels, roles, alerts, counterparties, plain-language story. | Free |
+| `screen_bank` | Bank / wire screening: BIC, IBAN, ABA routing number or LEI (+ bank name, beneficiary). Checksums, legal entity (GLEIF), FATF and EU lists, FinCEN 311, sanctions, enforcement. allow / review / block with reasons. | Free |
 | `screen_entity` | Sanctions screening of a person, company, vessel or address (fuzzy names, aliases, linked addresses). | Free |
+| `screen_enforcement` | Enforcement actions naming a firm or person: Fed, OCC, FDIC, FinCEN, SEC, CFTC, UK FCA; authority, date, type, link. | Builder |
+| `screen_licence` | Registered / licensed and where: FinCEN MSB, NY DFS virtual currency, UK FCA register (live), LEI. | Builder |
 | `screen_transfer` | Pre-signature check: allow / review / block for *amount* of *asset* from A to B, with reasons. No chain call. | Builder |
 | `analyze_transaction` | Status, value, counterparties and risk of both sides for a tx hash. | Builder |
 | `screen_wallets_batch` / `screen_transfers_batch` | Up to 50 per call — portfolio sweeps, payout files. | Builder |
 | `search` / `fetch` | Explore Prax intel in plain words; fetch a full record. | Business |
 | `get_alerts` | Approved threat-intel alerts from the last 24 h (same payload as the webhook feed). | Business |
 
-Try: *"Is 0x5227f603C1eE34CE3C06eFe6477003BDfCCB2f8c safe to pay?"* · *"Screen Acme Trading Ltd against sanctions"* ·
+Try: *"Can we wire to BIC DEUTDEFF for Acme GmbH?"* · *"Any enforcement actions against Acme Bancorp?"* · *"Is Acme Payments a registered MSB?"* ·
+*"Is 0x5227f603C1eE34CE3C06eFe6477003BDfCCB2f8c safe to pay?"* · *"Screen Acme Trading Ltd against sanctions"* ·
 *"Any new exploit alerts today?"*
 
 ## REST
 
-Same backend, same metering: `https://mcp.orabrain.com/v1` — OpenAPI at `/v1/openapi.json`. See `examples/`.
+Same backend, same metering: `https://mcp.orabrain.com/v1` — OpenAPI at `/v1/openapi.json`. Banking tools are `POST /v1/screen_bank`, `/v1/screen_enforcement`, `/v1/screen_licence` with a JSON body. See `examples/`.
 
 ## Terms
 

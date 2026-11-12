@@ -2,11 +2,17 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.orabrain/prax-data-services",
   "title": "Prax Data Services",
-  "description": "Screen wallets, transfers and sanctions for any agent that moves money. Read-only, free tier.",
-  "version": "1.0.2",
+  "description": "Screen banks, wires, sanctions, wallets and transfers before an agent moves money. Free tier.",
+  "version": "1.1.0",
   "websiteUrl": "https://mcp.orabrain.com/?src=registry",
-  "repository": { "url": "https://github.com/Prax-Labs-com/mcp-data-services", "source": "github" },
+  "repository": {
+    "url": "https://github.com/Prax-Labs-com/mcp-data-services",
+    "source": "github"
+  },
   "remotes": [
-    { "type": "streamable-http", "url": "https://mcp.orabrain.com/mcp" }
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.orabrain.com/mcp"
+    }
   ]
 }
