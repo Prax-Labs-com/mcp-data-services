@@ -3,7 +3,7 @@
   "name": "com.orabrain/prax-data-services",
   "title": "Prax Data Services",
   "description": "Screen banks, wires, sanctions, wallets and transfers before an agent moves money. Free tier.",
-  "version": "1.1.0",
+  "version": "1.4.0",
   "websiteUrl": "https://mcp.orabrain.com/?src=registry",
   "repository": {
     "url": "https://github.com/Prax-Labs-com/mcp-data-services",
