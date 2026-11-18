@@ -18,7 +18,7 @@ pre-signature transfer screening, transaction analysis and a threat-intelligence
 |---|---|
 | **Claude** (claude.ai / desktop) | Settings → Connectors → Add custom connector → URL `https://mcp.orabrain.com/mcp` → Connect (sign in on the portal, approve) |
 | **Claude Code** | `claude mcp add --transport http prax https://mcp.orabrain.com/mcp` then `/mcp` → prax → Authenticate |
-| **Cursor** | [Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=prax&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3Aub3JhYnJhaW4uY29tL21jcCJ9) or add to `.cursor/mcp.json`: `{"mcpServers":{"prax":{"url":"https://mcp.orabrain.com/mcp"}}}` |
+| **Cursor** | [![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=prax&config=eyJ1cmwiOiAiaHR0cHM6Ly9tY3Aub3JhYnJhaW4uY29tL21jcCJ9) then sign in when prompted. For always-on screening add the rules file: `mkdir -p .cursor/rules && curl -sS -o .cursor/rules/prax-screening.mdc https://mcp.orabrain.com/portal/cursor/prax-screening.mdc`, or install the **Prax Screening** plugin ([Prax-Labs-com/cursor-plugins](https://github.com/Prax-Labs-com/cursor-plugins)) from Cursor Settings → Plugins |
 | **VS Code** (Copilot agent mode) | `.vscode/mcp.json`: `{"servers":{"prax":{"type":"http","url":"https://mcp.orabrain.com/mcp"}}}` |
 | **ChatGPT** (Plus/Pro/Business) | Settings → Apps & Connectors → Advanced → Developer mode, then Create → MCP server URL above, authentication OAuth |
 | **Gemini** (app) | Settings → Connected apps → Custom apps → Add a custom app → server URL above → approve in the browser. Gemini Enterprise: Connected apps → Add MCP Server |
